@@ -55,7 +55,6 @@ func readDeckFromFile(filename string) deck {
 }
 func (d deck) shuffleDeck() {
 	source := rand.NewSource(time.Now().UnixNano())
-	fmt.Println(source.Seed)
 	r := rand.New(source)
 	for i := 0; i < len(d); i++ {
 		randomIndex := r.Intn(len(d) - 1)
