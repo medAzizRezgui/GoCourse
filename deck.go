@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"strings"
 )
 
@@ -45,6 +46,7 @@ func readDeckFromFile(filename string) deck {
 	data, err := ioutil.ReadFile(filename)
 	if err != nil {
 		log.Fatal(err)
+		os.Exit(1)
 	}
 	d := strings.Split(string(data), ",")
 	return d
